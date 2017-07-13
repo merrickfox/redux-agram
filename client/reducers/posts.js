@@ -1,3 +1,6 @@
-/**
- * Created by merrick on 25/04/2017.
- */
+function posts(state = [], action) {
+  console.log(state, action);
+  return state;
+}
+
+export default posts;
