@@ -1,6 +1,13 @@
 import React from 'react';
+import { autobind } from "core-decorators";
 
-const Comments = React.createClass({
+class Comments extends React.Component {
+
+	constructor(props) {
+		super(props);
+	}
+
+	@autobind
 	renderComment(comment, i) {
 		return (
 			<div className="comment" key={i}>
@@ -15,7 +22,9 @@ const Comments = React.createClass({
 				</p>
 			</div>
 		)
-	},
+	}
+
+	@autobind
 	handleSubmit(e) {
 		e.preventDefault();
 		const {postId} = this.props.params;
@@ -23,7 +32,8 @@ const Comments = React.createClass({
 		const comment = this.refs.comment.value;
 		this.props.addComment(postId, author, comment);
 		this.refs.commentForm.reset();
-	},
+	}
+
 	render() {
 		return (
 			<div className="comments">
@@ -36,6 +46,6 @@ const Comments = React.createClass({
 			</div>
 		)
 	}
-});
+};
 
 export default Comments;
