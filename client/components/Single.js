@@ -7,7 +7,6 @@ class Single extends React.Component {
 	constructor(props) {
 		super(props);
 	}
-	
 	render() {
 		const { postId } = this.props.params;
 
